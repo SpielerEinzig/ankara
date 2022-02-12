@@ -18,9 +18,6 @@ class _DrawerPageState extends State<DrawerPage> {
           children: [
             theAccountDrawerHeader(context),
             theListTile(context),
-            Divider(
-              color: Colors.white,
-            ),
           ],
         ),
       ),
@@ -62,28 +59,87 @@ UserAccountsDrawerHeader theAccountDrawerHeader(BuildContext context) {
   );
 }
 
-ListTile theListTile(BuildContext context) {
-  return ListTile(
-    title: Text(
-      'Gallery',
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 20,
+Column theListTile(BuildContext context) {
+  return Column(
+    children: [
+      ListTile(
+        title: Text(
+          'Gallery',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+          );
+        },
+        leading: Icon(
+          Icons.photo_album_sharp,
+          color: Colors.white,
+        ),
+        trailing: Icon(
+          Icons.arrow_forward_ios,
+          color: Colors.white,
+        ),
       ),
-    ),
-    onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
-      );
-    },
-    leading: Icon(
-      Icons.photo_album_sharp,
-      color: Colors.white,
-    ),
-    trailing: Icon(
-      Icons.arrow_forward_ios,
-      color: Colors.white,
-    ),
+      Divider(
+        color: Colors.white,
+      ),
+      ListTile(
+        title: Text(
+          'Library',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+          );
+        },
+        leading: Icon(
+          Icons.photo_library,
+          color: Colors.white,
+        ),
+        trailing: Icon(
+          Icons.arrow_forward_ios,
+          color: Colors.white,
+        ),
+      ),
+      Divider(
+        color: Colors.white,
+      ),
+      ListTile(
+        title: Text(
+          'Local Images',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+          );
+        },
+        leading: Icon(
+          Icons.photo_album_sharp,
+          color: Colors.white,
+        ),
+        trailing: Icon(
+          Icons.arrow_forward_ios,
+          color: Colors.white,
+        ),
+      ),
+      Divider(
+        color: Colors.white,
+      ),
+    ],
   );
 }

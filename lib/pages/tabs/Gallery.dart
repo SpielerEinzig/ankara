@@ -48,12 +48,13 @@ SliverGrid buildContents(List<String> imagePaths) {
     ),
     delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
       return GalleryImageWidget(
-        imagePath: imagePaths[index],
-        onImageTap: () => Navigator.push(
-          context,
-          _createGalleryDetailRoute(imagePaths, index),
-        ),
-      );
+          imagePath: imagePaths[index],
+          onImageTap: () {
+            Navigator.push(
+              context,
+              _createGalleryDetailRoute(imagePaths, index),
+            );
+          });
     }, childCount: imagePaths.length),
   );
 }
